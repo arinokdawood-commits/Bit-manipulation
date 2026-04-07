@@ -1,14 +1,12 @@
-num1 = 10
-num2 = 4 
-print("num1 & num2 =" , num1 & num2)
-print("\nnum1 | num2=" ,num1 | num2)
-print("\n~num1 =" , ~num1)
-print("\nnum1 ^ num2 =" , num1, num2)
-num1 = 10
-num2= 4
-print("\nnum >> 1 =" , num1 >> 1)
-print("\nnum2 >> 1 =", num2 >> 1)
-num1 = 10
-num2 = 4
-print("\nnum1 << 1" , num1 << 1)
-print("\nnnum2 << 1= " , num2<< 1)
+#Program to check if user input numbers are equal without using any comparison operator 
+def checkIfSame (number1, number2):
+#User XOR operator as a^a is always 0
+    if ((number1 ^ number2) !=0 ):
+        print("Numbers are not equal") 
+    else: 
+        print("Both numbers are equal") 
+#taking input
+number1 = int((input("Enter first number to compare :"))) 
+number2 = int(input("Enter second number to compare :"))   
+
+checkIfSame(number1 , number2)
