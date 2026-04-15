@@ -1,12 +1,14 @@
-#Program to check if user input numbers are equal without using any comparison operator 
-def checkIfSame (number1, number2):
-#User XOR operator as a^a is always 0
-    if ((number1 ^ number2) !=0 ):
-        print("Numbers are not equal") 
-    else: 
-        print("Both numbers are equal") 
-#taking input
-number1 = int((input("Enter first number to compare :"))) 
-number2 = int(input("Enter second number to compare :"))   
+# Program to check if a number i the power of 2
 
-checkIfSame(number1 , number2)
+def power2(number):
+    if(number == 0):
+        return 0
+    if((number & (~(number -1))) == number):
+        return 1
+    return 0
+number = int(input("Enter the number :"))
+
+if (power2(number)):
+    print("\n The number i power of 2")
+else:
+    print("\nThe number os not power of 2")
