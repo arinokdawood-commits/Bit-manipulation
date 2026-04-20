@@ -1,20 +1,26 @@
-def printTwoOdd (arr, size):
-    xorof2 = arr[0]
-    x = 0
-    y = 0
-    for i in range(1, size):
-        xorof2 = xorof2 ^ arr[i]
-    setbit = xorof2 & ~ (xorof2 - 1) 
-    for i in range(size):
-        if(arr[i] & setbit):
-            x = x ^ arr[i]
-        else:
-            y = y ^ arr[i]
-    print("The two ODD elements are" , x , "&" , y)
-arr = []
-arr_size = int(input("Enter size of the array :"))
-for i in range(0, arr_size):
-    z = int(input("Enter element :"))
-    arr.append(z)
-printTwoOdd(arr, arr_size)           
-    
+#Program to divide two numbers witout using the division operator
+def divide (ourDividend,ourDivisor):
+    #check if divisor is +ve or -ve
+    sign = (-1 if ((ourDividend < 0 ) ^
+                   (ourDivisor < 0)) else 1);
+
+
+    #make both positive 
+    ourDividend = abs(ourDividend)
+    ourDivisor = abs(ourDivisor)
+
+    quotientNumber = 0
+    tempNumber = 0
+    #Go from 31 to 0 and accumulate all valid bits
+    for i in range(31, -1 , -1):
+        if(tempNumber + (ourDivisor << i) <= ourDividend):
+            tempNumber += ourDivisor << i
+            quotientNumber |= 1 << i
+    # assuming the sing value cimpited earlier is -1 , negate the quotient value
+    if sign == - 1 :
+        quotientNumber = - quotientNumber
+    return quotientNumber 
+
+a = int(input("Enter a for a/b :"))
+b = int(input("Enter b for a/b :"))
+print ("Result of" ,a, "/", b, "is" , divide(a,b))
