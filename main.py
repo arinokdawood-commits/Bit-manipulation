@@ -1,14 +1,14 @@
-# Program to check if a number i the power of 2
-
-def power2(number):
-    if(number == 0):
-        return 0
-    if((number & (~(number -1))) == number):
-        return 1
-    return 0
-number = int(input("Enter the number :"))
-
-if (power2(number)):
-    print("\n The number i power of 2")
-else:
-    print("\nThe number os not power of 2")
+#Program to swap two numbers without 
+def swap1(a,b):
+    #code to swap 'a' and 'b' 
+    a = a ^ b
+    b = a ^ b
+    a = a ^ b 
+    print ("After Swapping :  a = " , a, "b = " , b)
+def swap2(a,b):
+    a = (a & b) + ( a | b)
+    b = a + (~b) + 1
+    a = a + (~b) + 1
+    print("After swapping : a " , a, "b =" , b) 
+swap1(1,2)
+swap2(1,2)   
