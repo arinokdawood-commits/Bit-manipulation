@@ -1,14 +1,16 @@
-#Program to swap two numbers without 
-def swap1(a,b):
-    #code to swap 'a' and 'b' 
-    a = a ^ b
-    b = a ^ b
-    a = a ^ b 
-    print ("After Swapping :  a = " , a, "b = " , b)
-def swap2(a,b):
-    a = (a & b) + ( a | b)
-    b = a + (~b) + 1
-    a = a + (~b) + 1
-    print("After swapping : a " , a, "b =" , b) 
-swap1(1,2)
-swap2(1,2)   
+import math 
+def printPowerSet(set, setsize):
+    PowerSetSize = (int) (math.pow(2, setsize))
+    outer = 0 
+    inner = 0
+    for outer in range (0 , PowerSetSize):
+        for inner in range (0 , setsize):
+            if((outer &(1 << inner)) > 0):
+                print(set[inner] , end = "")
+        print()
+size = int(input("Enter array size :")) 
+set = []
+for i in range (0 , size):
+    n = int(input ("Enter element :"))
+    set.append(n)
+printPowerSet(set, len(set))           
