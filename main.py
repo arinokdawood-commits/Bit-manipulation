@@ -1,16 +1,12 @@
-import math 
-def printPowerSet(set, setsize):
-    PowerSetSize = (int) (math.pow(2, setsize))
-    outer = 0 
-    inner = 0
-    for outer in range (0 , PowerSetSize):
-        for inner in range (0 , setsize):
-            if((outer &(1 << inner)) > 0):
-                print(set[inner] , end = "")
-        print()
-size = int(input("Enter array size :")) 
-set = []
-for i in range (0 , size):
-    n = int(input ("Enter element :"))
-    set.append(n)
-printPowerSet(set, len(set))           
+def myfunction(n):
+    for i in range(0,n+1):
+        print("First Loop")
+ 
+    j=1
+    while(j<=n+1):
+        print("Second Loop ",j)
+        j=j*2
+ 
+    for i in range(0,100):
+        print("Third loop")
+
